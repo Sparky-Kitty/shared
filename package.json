@@ -1,0 +1,39 @@
+{
+  "name": "@sanctuaryteam/shared",
+  "version": "0.1.0",
+  "repository": "https://github.com/SanctuaryTeam/shared.git",
+  "author": "SanctuaryTeam",
+  "license": "MIT",
+  "main": "./cjs/index.js",
+  "module": "./esm/index.js",
+  "exports": {
+    ".": {
+      "default": {
+        "require": "./cjs/index.js",
+        "import": "./esm/index.js"
+      }
+    }
+  },
+  "types": "./cjs/index.d.ts",
+  "scripts": {
+    "lint": "eslint . --ext .ts --fix",
+    "tsc": "tsc --noEmit",
+    "prebuild": "yarn clean",
+    "build": "yarn build:cjs && yarn build:esm",
+    "postbuild": "node ./postbuild.js",
+    "build:cjs": "tsc -p tsconfig.build.json",
+    "build:esm": "tsc -p tsconfig.esm.json",
+    "clean": "rimraf cjs esm"
+  },
+  "sideEffects": false,
+  "dependencies": {
+    "@diablosnaps/common": "^0.2.5"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.2.1",
+    "@typescript-eslint/parser": "^6.2.1",
+    "eslint": "^8.46.0",
+    "rimraf": "^5.0.1",
+    "typescript": "^5.1.6"
+  }
+}
