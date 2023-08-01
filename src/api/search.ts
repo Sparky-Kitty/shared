@@ -18,18 +18,23 @@ export interface ItemFilter {
 }
 
 export interface SeasonalFilter {
-    socketType: Game.ItemSocketType;
+    socketType?: Game.ItemSocketType;
+}
+
+export interface AffixOption {
+    id?: Game.AffixId;
+    minValue?: number;
 }
 
 export interface AffixFilter {
-    id: Game.AffixId;
-    minValue?: number;
+    options?: AffixOption[];
+    count?: number;
 }
 
 export interface Query {
     item?: ItemFilter;
     seasonal?: SeasonalFilter;
-    affixes?: AffixFilter[];
+    affix?: AffixFilter;
 }
 
 export interface ListingAccount {
@@ -52,12 +57,14 @@ export interface FetchResult {
     listing: Listing;
 }
 
-
-
-
-export interface SearchRequest {
+export interface SearchPayload {
     query?: Query;
     sort?: Sort;
+}
+
+export interface SearchRequest {
+    payload: SearchPayload;
+    serverType: Game.ServerType;
 }
 
 export interface SearchResponse {
