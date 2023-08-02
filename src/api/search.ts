@@ -44,15 +44,13 @@ export interface ListingAccount {
 }
 
 export interface Listing {
+    id: string;
     account: ListingAccount;
     expiresAt: Date;
     // TODO: price, bidding info, etc
 }
 
-export type FetchId = string;
-
-export interface FetchResult {
-    id: FetchId;
+export interface SearchResult {
     item: Game.Item;
     listing: Listing;
 }
@@ -67,15 +65,16 @@ export interface SearchRequest {
     serverType: Game.ServerType;
 }
 
-export interface SearchResponse {
+export interface SearchPageRequest extends SearchRequest {
+    timestamp: number;
+    page: number;
+}
+
+export interface SearchPageResponse {
+    results: SearchResult[];
+}
+
+export interface SearchResponse extends SearchPageResponse {
     total: number;
-    results: FetchId[];
-}
-
-export interface FetchRequest {
-    ids: FetchId[];
-}
-
-export interface FetchResponse {
-    results: FetchResult[];
+    timestamp: number;
 }
