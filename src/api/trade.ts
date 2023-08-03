@@ -37,6 +37,11 @@ export interface TradeQuery {
     affix?: TradeAffixFilter;
 }
 
+export interface TradeSearch {
+    query?: TradeQuery;
+    sort?: TradeSort;
+}
+
 export interface TradeListingAccount {
     name: string;
     online: boolean;
@@ -58,15 +63,9 @@ export interface TradeFetchResult {
 export interface TradeSearchGetParams {
     searchId: string;
 }
-export interface TradeSearchGetResponse {
-    query?: TradeQuery;
-    sort?: TradeSort;
-}
+export type TradeSearchGetResponse = TradeSearch;
 
-export interface TradeSearchCreateBody {
-    query?: TradeQuery;
-    sort?: TradeSort;
-}
+export type TradeSearchCreateBody = TradeSearch;
 export interface TradeSearchCreateResponse {
     searchId: string;
     timestamp: number;
