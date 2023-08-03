@@ -60,21 +60,31 @@ export interface SearchPayload {
     sort?: Sort;
 }
 
-export interface SearchRequest {
-    payload: SearchPayload;
-    serverType: Game.ServerType;
+export interface SearchGetRequestParams {
+    payloadId: string;
 }
 
-export interface SearchPageRequest extends SearchRequest {
+export interface SearchGetResponse {
+    payload: SearchPayload;
+}
+
+export interface SearchPostRequest {
+    payload: SearchPayload;
+}
+
+export interface SearchPostResponse {
+    payloadId: string;
+    timestamp: number;
+}
+
+export interface FetchGetRequestParams {
+    serverType: Game.ServerType;
+    payloadId: string;
     timestamp: number;
     page: number;
 }
 
-export interface SearchPageResponse {
+export interface FetchGetResponse {
     results: SearchResult[];
-}
-
-export interface SearchResponse extends SearchPageResponse {
-    total: number;
-    timestamp: number;
+    hasMore: boolean;
 }
