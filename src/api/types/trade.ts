@@ -37,11 +37,6 @@ export interface TradeQuery {
     affix?: TradeAffixFilter;
 }
 
-export interface TradeSearch {
-    query?: TradeQuery;
-    sort?: TradeSort;
-}
-
 export interface TradeListingAccount {
     name: string;
     online: boolean;
@@ -50,34 +45,33 @@ export interface TradeListingAccount {
 
 export interface TradeListing {
     id: string;
-    // account: TradeListingAccount;
-    // expiresAt: Date;
+    account?: TradeListingAccount;
+    expiresAt?: Date;
     // TODO: price, bidding info, etc
 }
 
-export interface TradeFetchResult {
+export interface TradeSearchPayload {
+    query?: TradeQuery;
+    sort?: TradeSort;
+}
+
+export interface TradeSearchResult {
     item: Game.Item;
     listing: TradeListing;
 }
 
-export interface TradeSearchGetParams {
-    searchId: string;
-}
-export type TradeSearchGetResponse = TradeSearch;
-
-export type TradeSearchCreateBody = TradeSearch;
-export interface TradeSearchCreateResponse {
-    searchId: string;
-    timestamp: number;
-}
-
-export interface TradeFetchGetQuery {
+export interface TradeGetSearchQuery {
     serverType: Game.ServerType;
-    searchId: string;
-    timestamp: number;
+    /**
+     * Serialized TradeSearchPayload
+     */
+    payload: string;
     page: number;
+    pageSize?: number;
+    timestamp?: number;
 }
-export interface TradeFetchGetResponse {
-    results: TradeFetchResult[];
+export interface TradeGetSearchResponse {
+    results: TradeSearchResult[];
     hasMore: boolean;
+    timestamp: number;
 }

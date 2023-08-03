@@ -1,7 +1,8 @@
-export interface User {
+export interface AuthUser {
     id: string;
     battleNetTag: string;
-    discordName?: string;
+    discordId: string;
+    discordName: string;
 }
 
 export interface AuthCallbackParams {
@@ -10,5 +11,5 @@ export interface AuthCallbackParams {
 
 export interface AuthCallbackResponse {
     token: string;
-    user: User;
+    user: AuthUser;
 }
