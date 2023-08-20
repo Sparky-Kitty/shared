@@ -14,14 +14,19 @@ export interface ServiceTitleFilter {
     keywords?: string;
 }
 
-export interface ServiceTagsRegionFilter {
+export interface ServiceTagsFilter {
     tags?: number[];
-    region?: number;
+}
+
+export interface ServiceAuthorFilter {
+    userId?: number;
+    btag?: string;
 }
 
 export interface ServiceQuery {
     title?: ServiceTitleFilter;
-    tagsAndRegion?: ServiceTagsRegionFilter;
+    tags?: ServiceTagsFilter;
+    author?: ServiceAuthorFilter;
 }
 
 export interface ServiceListingAccount {
