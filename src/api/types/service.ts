@@ -3,7 +3,7 @@ import { Game } from '@diablosnaps/common';
 export type ServiceSortDirection = 'asc' | 'desc';
 
 // TODO: discuss
-export type ServiceSortField = 'listedAt' | 'price';
+export type ServiceSortField = 'bumpedAt';
 
 export interface ServiceSort {
     field: ServiceSortField;
@@ -33,10 +33,12 @@ export interface ServiceListingAccount {
 export interface ServiceListing {
     id: string;
     account?: ServiceListingAccount;
+    realmType?: string;
     title?: string;
     content?: string;
+    userId?: number;
     tags?: number[];
-    region?: number;
+    maxAcceptedSlots?: number;
     lastUpdated?: Date;
     // TODO: price, bidding info, etc
 }
