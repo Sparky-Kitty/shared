@@ -1,10 +1,10 @@
 import { API } from '..';
 
 export enum ServiceSlotStates {
-    PENDING = 'Pending',
-    ACCEPTED = 'Accepted',
-    REJECTED = 'Rejected',
-    ENDED = 'Ended',
+    Pending = 'PENDING',
+    Accepted = 'ACCEPTED',
+    Rejected = 'REJECTED',
+    Ended = 'ENDED',
 }
 
 export interface ServiceSlot {
