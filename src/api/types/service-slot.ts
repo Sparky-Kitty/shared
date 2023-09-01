@@ -1,15 +1,15 @@
 import { API } from '..';
 
-export enum SERVICE_SLOT_STATES {
-    PENDING = 'PENDING',
-    ACCEPTED = 'ACCEPTED',
-    REJECTED = 'REJECTED',
-    ENDED = 'ENDED',
+export enum ServiceSlotStates {
+    PENDING = 'Pending',
+    ACCEPTED = 'Accepted',
+    REJECTED = 'Rejected',
+    ENDED = 'Ended',
 }
 
 export interface ServiceSlot {
     id: string;
-    state: SERVICE_SLOT_STATES;
+    state: ServiceSlotStates;
     service: API.ServiceListing;
     serviceId?: number;
     serviceOwner: API.AuthUser;
@@ -22,9 +22,9 @@ export interface ServiceSlot {
 export interface ServiceSlotGetSearchQuery {
     clientId?: number;
     ownerId?: number;
-    state?: SERVICE_SLOT_STATES;
+    state?: ServiceSlotStates;
     excludeEnded?: string;
     limit?: number;
 }
 
-export type ServiceSlotGetSearchResponse = ServiceSlot[]
+export type ServiceSlotGetSearchResponse = ServiceSlot[];

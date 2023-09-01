@@ -36,7 +36,7 @@ const REVERSE_TABLE: Record<string, KEY> = Object.keys(TABLE).reduce((acc, k) =>
 }, {} as Record<string, KEY>);
 
 export function serializeTradeSearchPayload(
-    payload: TradeSearchPayload
+    payload: TradeSearchPayload,
 ): string {
     const minified = JSON.stringify(payload, (_, value: unknown) => {
         if (value && typeof value === 'object' && !Array.isArray(value)) {
@@ -57,7 +57,7 @@ export function serializeTradeSearchPayload(
 }
 
 export function deserializeTradeSearchPayload(
-    serializedPayload: string
+    serializedPayload: string,
 ): TradeSearchPayload {
     if (!serializedPayload?.length) {
         return {};
