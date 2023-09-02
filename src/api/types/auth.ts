@@ -6,7 +6,7 @@ export interface AuthUser {
 }
 
 export interface AuthCallbackParams {
-    code: string
+    code: string;
 }
 
 export interface AuthCallbackResponse {

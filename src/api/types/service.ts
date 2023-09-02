@@ -1,5 +1,5 @@
 import { Game } from '@diablosnaps/common';
-import { AuthUser } from './'
+import { AuthUser } from './';
 
 export const TAGS = {
     POWERLEVELING: 1 << 0,
@@ -16,11 +16,11 @@ export const numberToTags = (numberValue: number): string[] => {
 
     for (const tag in TAGS) {
         if ((numberValue & TAGS[tag]) !== 0) {
-            selectedTags.push(tag.replace("_", " "));
+            selectedTags.push(tag.replace('_', ' '));
         }
     }
     return selectedTags;
-}
+};
 
 export interface ServiceListing {
     id: string;
@@ -45,4 +45,4 @@ export interface ServiceGetSearchQuery {
     limit?: number;
 }
 
-export type ServiceGetSearchResponse = ServiceListing[]
+export type ServiceGetSearchResponse = ServiceListing[];
