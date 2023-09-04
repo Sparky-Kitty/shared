@@ -6,9 +6,12 @@ export const TAGS = {
     BOSS_HELP: 1 << 1,
     UBER_LILITH: 1 << 2,
     CAPSTONE_BOOST: 1 << 3,
-    EUROPE: 1 << 4,
-    ASIA: 1 << 5,
-    AMERICA: 1 << 6,
+};
+
+export const REGIONS = {
+    EUROPE: 1 << 0,
+    ASIA: 1 << 1,
+    AMERICA: 1 << 2,
 };
 
 export const numberToTags = (numberValue: number): string[] => {
@@ -22,6 +25,17 @@ export const numberToTags = (numberValue: number): string[] => {
     return selectedTags;
 };
 
+export const numberToRegions = (numberValue: number): string[] => {
+    const selectedRegions: string[] = [];
+
+    for (const region in REGIONS) {
+        if ((numberValue & REGIONS[region]) !== 0) {
+            selectedRegions.push(region.replace('_', ' '));
+        }
+    }
+    return selectedRegions;
+};
+
 export interface ServiceListing {
     id: string;
     realmType?: string;
@@ -30,6 +44,7 @@ export interface ServiceListing {
     user?: AuthUser;
     userId?: number;
     tags?: number;
+    regions?: number;
     maxAcceptedSlots?: number;
     updatedAt?: Date;
     deleted?: boolean;
@@ -39,6 +54,7 @@ export interface ServiceGetSearchQuery {
     serverType: Game.ServerType;
     title?: string;
     tags?: number;
+    region?: number;
     userId?: number;
     deleted?: boolean;
     offset?: number;
