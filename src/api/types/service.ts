@@ -28,18 +28,18 @@ export interface ServiceListing {
     title?: string;
     content?: string;
     user?: AuthUser;
-    userId?: number;
+    userId?: string;
     tags?: number;
     maxAcceptedSlots?: number;
-    updatedAt?: Date;
+    updatedAt?: string;
     deleted?: boolean;
 }
 
 export interface ServiceGetSearchQuery {
-    serverType: Game.ServerType;
+    serverType?: Game.ServerType;
     title?: string;
     tags?: number;
-    userId?: number;
+    userId?: string;
     deleted?: boolean;
     offset?: number;
     limit?: number;
