@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  build:
+    image: node:latest
+    env_file:
+      - .env
+    working_dir: /shared
+    volumes:
+      - .:/shared
+    command: /bin/sh -c "yarn install && yarn build && echo 'Build complete!'"

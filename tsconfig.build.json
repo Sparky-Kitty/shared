@@ -1,23 +1,23 @@
 {
-    "compilerOptions": {
-        "module": "commonjs",
-        "moduleResolution": "node",
-        "declaration": true,
-        "declarationMap": true,
-        "skipLibCheck": true,
-        "lib": [
-            "es7",
-            "DOM"
-        ],
-        "target": "es6",
-        "outDir": "./cjs",
-    },
-    "include": [
-        "src/**/*.ts"
+  "compilerOptions": {
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "declaration": true,
+    "declarationMap": true,
+    "skipLibCheck": true,
+    "lib": [
+      "es7",
+      "DOM"
     ],
-    "exclude": [
-        "node_modules",
-        "cjs",
-        "esm",
-    ],
+    "target": "es6",
+    "outDir": "./cjs"
+  },
+  "include": [
+    "src/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "cjs",
+    "esm"
+  ]
 }
