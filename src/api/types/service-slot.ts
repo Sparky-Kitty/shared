@@ -11,19 +11,18 @@ export interface ServiceSlot {
     id: string;
     state: ServiceSlotStates;
     service: API.ServiceListing;
-    serviceId?: number;
+    serviceId?: string;
     serviceOwner: API.AuthUser;
-    serviceOwnerUserId: number;
+    serviceOwnerUserId: string;
     client: API.AuthUser;
-    clientUserId: number;
+    clientUserId: string;
     updatedAt: Date;
 }
 
 export interface ServiceSlotGetSearchQuery {
-    clientId?: number;
-    ownerId?: number;
+    userId?: string;
     state?: ServiceSlotStates;
-    excludeEnded?: string;
+    excludeEnded?: boolean;
     limit?: number;
 }
 

@@ -1,8 +1,17 @@
+import { API } from "..";
+
 export interface AuthUser {
-    id: string;
+    id?: string;
+    name: string;
     battleNetTag: string;
-    discordId: string;
+    discordId?: string;
     discordName: string;
+}
+
+export interface Notification {
+    recipient: AuthUser;
+    entity: API.ServiceSlot;
+    message: string;
 }
 
 export interface AuthCallbackParams {
