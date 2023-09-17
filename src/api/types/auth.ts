@@ -6,6 +6,8 @@ export interface AuthUser {
     battleNetTag: string;
     discordId?: string;
     discordName: string;
+    vouchRating: number;
+    vouchScore: number;
 }
 
 export interface Notification {
