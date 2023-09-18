@@ -2,7 +2,6 @@ import { API } from "..";
 
 export interface AuthUser {
     id?: string;
-    name: string;
     battleNetTag: string;
     discordId?: string;
     discordName: string;
