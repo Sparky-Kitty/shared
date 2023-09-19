@@ -1,5 +1,5 @@
 import { Game } from '@diablosnaps/common';
-import { AuthUser } from './';
+import { API } from '..';
 
 export const TAGS = {
     POWERLEVELING: 1 << 0,
@@ -22,17 +22,21 @@ export const numberToTags = (numberValue: number): string[] => {
     return selectedTags;
 };
 
-export interface ServiceListing {
+export interface ServiceDto {
     id: string;
-    realmType?: string;
-    title?: string;
-    content?: string;
-    user?: AuthUser;
-    userId?: string;
-    tags?: number;
-    maxAcceptedSlots?: number;
-    updatedAt?: string;
-    deleted?: boolean;
+    realmType: string;
+    title: string;
+    content: string;
+    user: API.UserDto;
+    userId: number;
+    tags: number;
+    maxAcceptedSlots: number;
+    slots: API.ServiceSlotDto[];
+    bumpedAt: Date;
+    createdAt: Date;
+    updatedAt: Date;
+    updatedBy: string;
+    deleted: boolean;
 }
 
 export interface ServiceGetSearchQuery {
@@ -45,4 +49,4 @@ export interface ServiceGetSearchQuery {
     limit?: number;
 }
 
-export type ServiceGetSearchResponse = ServiceListing[];
+export type ServiceGetSearchResponse = ServiceDto[];

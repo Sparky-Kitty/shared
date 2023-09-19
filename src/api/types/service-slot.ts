@@ -7,15 +7,15 @@ export enum ServiceSlotStates {
     Ended = 'ENDED',
 }
 
-export interface ServiceSlot {
+export interface ServiceSlotDto {
     id: string;
-    state: ServiceSlotStates;
-    service: API.ServiceListing;
-    serviceId?: string;
-    serviceOwner: API.AuthUser;
-    serviceOwnerUserId: string;
-    client: API.AuthUser;
-    clientUserId: string;
+    state: API.ServiceSlotStates;
+    service: API.ServiceDto;
+    serviceId?: number;
+    serviceOwner: API.UserDto;
+    serviceOwnerUserId: number;
+    client: API.UserDto;
+    clientUserId: number;
     updatedAt: Date;
 }
 
@@ -26,4 +26,4 @@ export interface ServiceSlotGetSearchQuery {
     limit?: number;
 }
 
-export type ServiceSlotGetSearchResponse = ServiceSlot[];
+export type ServiceSlotGetSearchResponse = ServiceSlotDto[];

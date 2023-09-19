@@ -1,17 +1,18 @@
-import { API } from "..";
+import { API } from '..';
 
-export interface AuthUser {
+export interface UserDto {
     id?: string;
-    battleNetTag: string;
-    discordId?: string;
     discordName: string;
-    vouchRating: number;
-    vouchScore: number;
+    discordId?: string;
+    email?: string;
+    battleNetTag: string;
+    vouchScore?: number;
+    vouchRating?: number;
 }
 
 export interface Notification {
-    recipient: AuthUser;
-    entity: API.ServiceSlot;
+    recipient: UserDto;
+    entity: API.ServiceSlotDto; // || API.ItemBidDto || API.VouchDto
     message: string;
 }
 
@@ -21,5 +22,5 @@ export interface AuthCallbackParams {
 
 export interface AuthCallbackResponse {
     token: string;
-    user: AuthUser;
+    user: UserDto;
 }
