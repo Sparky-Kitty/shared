@@ -11,11 +11,11 @@ export interface ServiceSlotDto {
     id: string;
     state: API.ServiceSlotStates;
     service: API.ServiceDto;
-    serviceId?: number;
+    serviceId?: string;
     serviceOwner: API.UserDto;
-    serviceOwnerUserId: number;
+    serviceOwnerUserId: string;
     client: API.UserDto;
-    clientUserId: number;
+    clientUserId: string;
     updatedAt: Date;
 }
 

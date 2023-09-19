@@ -28,7 +28,7 @@ export interface ServiceDto {
     title: string;
     content: string;
     user: API.UserDto;
-    userId: number;
+    userId: string;
     tags: number;
     maxAcceptedSlots: number;
     slots: API.ServiceSlotDto[];
