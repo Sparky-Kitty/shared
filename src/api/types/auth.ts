@@ -1,7 +1,7 @@
 import { API } from '..';
 
 export interface UserDto {
-    id?: string;
+    id: string;
     discordName: string;
     discordId?: string;
     email?: string;

@@ -32,9 +32,9 @@ export interface ServiceDto {
     tags: number;
     maxAcceptedSlots: number;
     slots: API.ServiceSlotDto[];
-    bumpedAt: Date;
-    createdAt: Date;
-    updatedAt: Date;
+    bumpedAt: string;
+    createdAt: string;
+    updatedAt: string;
     updatedBy: string;
     deleted: boolean;
 }

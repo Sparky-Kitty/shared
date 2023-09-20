@@ -16,7 +16,7 @@ export interface ServiceSlotDto {
     serviceOwnerUserId: string;
     client: API.UserDto;
     clientUserId: string;
-    updatedAt: Date;
+    updatedAt: string;
 }
 
 export interface ServiceSlotGetSearchQuery {
