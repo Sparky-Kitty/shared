@@ -6,8 +6,8 @@ export interface UserDto {
     discordId?: string;
     email?: string;
     battleNetTag: string;
-    vouchScore?: number;
-    vouchRating?: number;
+    vouchScore: number;
+    vouchRating: number;
 }
 
 export interface Notification {

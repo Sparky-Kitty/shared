@@ -24,7 +24,7 @@ export const numberToTags = (numberValue: number): string[] => {
 
 export interface ServiceDto {
     id: string;
-    realmType: string;
+    realmType: Game.ServerType;
     title: string;
     content: string;
     user: API.UserDto;
