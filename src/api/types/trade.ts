@@ -1,5 +1,39 @@
 import { Game } from '@diablosnaps/common';
 
+export interface DiabloItemAffixDto {
+    id: number;
+    name: string;
+}
+
+export interface DiabloItemDto {
+    id: string;
+    quality?: Game.ItemQuality;
+    variant?: Game.ItemVariant;
+    name?: string;
+    power?: number;
+    type?: Game.ItemType;
+    dps?: number;
+    armor?: number;
+    socketCount?: number;
+    socketType?: Game.ItemSocketType;
+    requiredLevel?: number;
+    classRestriction?: Game.Class;
+    inherentAffix0?: DiabloItemAffixDto;
+    inherentAffix0Value?: number;
+    inherentAffix1?: DiabloItemAffixDto;
+    inherentAffix1Value?: number;
+    affix0?: DiabloItemAffixDto;
+    affix0Value?: number;
+    affix1?: DiabloItemAffixDto;
+    affix1Value?: number;
+    affix2?: DiabloItemAffixDto;
+    affix2Value?: number;
+    affix3?: DiabloItemAffixDto;
+    affix3Value?: number;
+    image?: string;
+    deleted: boolean;
+}
+
 export type TradeSortDirection = 'asc' | 'desc';
 
 // TODO: discuss
