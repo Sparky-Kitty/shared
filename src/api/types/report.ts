@@ -18,7 +18,7 @@ export interface ReportReasonDto {
 }
 
 export interface ReportDto {
-    id: string; 
+    id: string;
     reportTypeId: number;
     reportType: ReportTypeDto;
     reportReasonId: number;

@@ -1,4 +1,4 @@
-import { API } from "..";
+import { API } from '..';
 
 export interface UserNotificationDto {
     id: string;
