@@ -29,6 +29,7 @@ export interface ReportDto {
     userAcceptedTermsOfUse: boolean;
     reportedReference: API.UserDto | API.DiabloItemDto | API.ServiceDto;
     reportedReferenceId: string;
+    reportedReferenceType: string;
     state: REPORT_STATES;
     assignedUserId: string;
     assignedUser: API.UserDto;
