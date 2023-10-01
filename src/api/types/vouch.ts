@@ -9,6 +9,8 @@ export interface UserVouchDto {
     id: string;
     recipient: API.UserDto;
     recipientId: string;
+    author: API.UserDto;
+    authorId: string;
     reference: API.ServiceDto; // || API.ItemListingDto
     referenceId: string;
     referenceType: string;
